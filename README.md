@@ -128,6 +128,7 @@ Build buildroot
 
 ```sh
 make O=build-aarch64/
+cd $ROOT
 ```
 
 ```sh
