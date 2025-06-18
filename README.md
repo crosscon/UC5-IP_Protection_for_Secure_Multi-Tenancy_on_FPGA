@@ -86,6 +86,22 @@ make -C $OPTEE_DIR \
 cd $ROOT
 ```
 
+# Copy the new TA to optee_test overlay
+
+```sh
+ls -l optee_os/optee-aarch64/ta/ta_com 
+```
+
+```sh
+cp optee_os/optee-aarch64/ta/ta_com/56781234-1234-1234-1234-567890abcdef.ta optee_test/to_buildroot-aarch64/lib/optee_armtz 
+```
+
+```
+ls -l optee_test/to_buildroot-aarch64/lib/optee_armtz
+```
+
+
+
 # Now we need to build buildroot
 
 Ensure that the CA is rebuilt (if there are changes)
@@ -112,6 +128,14 @@ Build buildroot
 
 ```sh
 make O=build-aarch64/
+```
+
+```sh
+ls -l buildroot/build-aarch64/target/lib/optee_armtz
+```
+
+```sh
+ls -l buildroot/build-aarch64/target/lib/firmware
 ```
 
 # Build Linux
