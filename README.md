@@ -181,6 +181,8 @@ cd $ROOT
 ./build-demo-vtee.sh
 ```
 
-
+``` sh
+fatload mmc 0 0x200000 crossconhyp.img; bootm start 0x200000; bootm loados; bootm go
+```
 
 
