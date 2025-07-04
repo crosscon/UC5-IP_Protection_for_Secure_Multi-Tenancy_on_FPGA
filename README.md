@@ -107,7 +107,9 @@ ls -l optee_test/to_buildroot-aarch64/lib/optee_armtz
 Ensure that the CA is rebuilt (if there are changes)
 
 ```sh
+cd buildroot
 make O=build-aarch64/ my_test_ca_pkg-rebuild
+cd $ROOT
 ```
 
 If this is the first time, buildroot config needs the package to be enabled.
@@ -116,7 +118,9 @@ Run
 
 
 ```sh
+cd buildroot
 make menuconfig
+cd $ROOT
 ```
 
 Go to Target Packages -> Custom Packages -> my_test_ca_pkg and enable it.
@@ -127,6 +131,7 @@ Run
 Build buildroot
 
 ```sh
+cd buildroot
 make O=build-aarch64/
 cd $ROOT
 ```
@@ -178,6 +183,7 @@ cd $ROOT
 
 
 ``` sh
+cd zcu-ws
 ./build-demo-vtee.sh
 ```
 
